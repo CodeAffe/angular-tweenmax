@@ -3,7 +3,7 @@ tweenmaxApp.service('Scroller', function(TweenMax) {
 
   this.to = function(duration, options) {
     if (navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i)) {
-      window.scrollTo(x, y);
+      window.scrollTo(options.x, options.scrollTop);
     } else if (navigator.userAgent.match(/Firefox/i) || navigator.userAgent.match(/MSIE/i)) {
       TweenMax.to(document.documentElement, duration, options);
     } else {
